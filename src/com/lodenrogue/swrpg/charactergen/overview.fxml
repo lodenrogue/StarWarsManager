@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="115.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.OverviewController">
+   <children>
+      <Label layoutX="12.0" layoutY="11.0" text="Character name:" />
+      <Label fx:id="characterNameLbl" layoutX="125.0" layoutY="11.0" text="First Last" />
+      <Label layoutX="68.0" layoutY="61.0" text="Career:" />
+      <Label fx:id="careerLbl" layoutX="125.0" layoutY="61.0" text="Some Career" />
+      <Label layoutX="61.0" layoutY="35.0" text="Species:" />
+      <Label fx:id="speciesLbl" layoutX="125.0" layoutY="35.0" text="Some Species" />
+      <Label layoutX="18.0" layoutY="87.0" text="Specializations:" />
+      <Label fx:id="specializationsLbl" layoutX="125.0" layoutY="87.0" text="Some, Specializations" />
+   </children>
+</AnchorPane>
