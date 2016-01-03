@@ -49,7 +49,27 @@ public class CharactersActivityController implements Initializable {
 
 	@FXML
 	public void onButtonPressed(ActionEvent e) {
+		if (e.getSource().equals(selectBtn)) {
+			selectCharacter();
+		}
+		else if (e.getSource().equals(removeBtn)) {
+			removeCharacter();
+		}
+		else if (e.getSource().equals(newBtn)) {
+			createNewCharacter();
+		}
+	}
 
+	private void createNewCharacter() {
+		// TODO
+	}
+
+	private void removeCharacter() {
+		// TODO
+	}
+
+	private void selectCharacter() {
+		// TODO
 	}
 
 	private void populateNames() {

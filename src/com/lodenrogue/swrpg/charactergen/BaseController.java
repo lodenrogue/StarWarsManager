@@ -71,23 +71,36 @@ public class BaseController implements Initializable {
 			charactersBtn.setDisable(true);
 			loadActivity(ActivityState.CHARACTERS);
 		}
+		else if (e.getSource().equals(descriptionBtn)) {
+			saveData();
+			resetButtons();
+			descriptionBtn.setDisable(true);
+			loadActivity(ActivityState.DESCRIPTION);
+		}
 
 		// Update currentScreenLbl
 		if (e.getSource() instanceof Button) {
 			currentScreenLbl.setText(((Button) e.getSource()).getText());
 		}
-
-	}
-
-	private void loadActivity(ActivityState state) throws IOException {
-		if (state.equals(ActivityState.CHARACTERS)) {
-			Parent activityRoot = FXMLLoader.load(getClass().getResource("activities/characters_activity.fxml"));
-			activityPane.getChildren().setAll(activityRoot.getChildrenUnmodifiable());
-		}
 	}
 
 	private void saveData() {
 		// TODO
+	}
+
+	private void loadActivity(ActivityState state) throws IOException {
+		String fxmlResource = "";
+		if (state.equals(ActivityState.CHARACTERS)) {
+			fxmlResource = "activities/characters_activity.fxml";
+		}
+		else if (state.equals(ActivityState.DESCRIPTION)) {
+			fxmlResource = "activities/description_activity.fxml";
+		}
+
+		if (fxmlResource.length() > 0) {
+			Parent activityRoot = FXMLLoader.load(getClass().getResource(fxmlResource));
+			activityPane.getChildren().setAll(activityRoot.getChildrenUnmodifiable());
+		}
 	}
 
 	private void resetButtons() {

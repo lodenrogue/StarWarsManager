@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.activities.DescriptionActivityController">
+   <children>
+      <AnchorPane prefHeight="390.0" prefWidth="338.0">
+         <children>
+            <Label layoutX="20.0" layoutY="31.0" text="Player Name:" />
+            <TextField fx:id="playerNameField" layoutX="157.0" layoutY="25.0" prefHeight="27.0" prefWidth="160.0" />
+            <Label layoutX="20.0" layoutY="76.0" text="Character name:" />
+            <TextField fx:id="characterNameField" layoutX="157.0" layoutY="71.0" prefWidth="160.0" />
+            <Label layoutX="20.0" layoutY="121.0" text="Gender:" />
+            <ComboBox fx:id="genderBox" layoutX="157.0" layoutY="116.0" prefHeight="27.0" prefWidth="90.0" />
+            <Label layoutX="20.0" layoutY="166.0" text="Age:" />
+            <TextField fx:id="ageField" layoutX="157.0" layoutY="161.0" prefHeight="27.0" prefWidth="90.0" />
+            <Label layoutX="20.0" layoutY="209.0" text="Height:" />
+            <TextField fx:id="heightField" layoutX="157.0" layoutY="204.0" prefHeight="27.0" prefWidth="90.0" />
+            <Label layoutX="20.0" layoutY="252.0" text="Build:" />
+            <TextField fx:id="buildField" layoutX="157.0" layoutY="247.0" prefHeight="27.0" prefWidth="90.0" />
+            <Label layoutX="20.0" layoutY="295.0" text="Hair:" />
+            <TextField fx:id="hairField" layoutX="157.0" layoutY="290.0" prefWidth="90.0" />
+            <Label layoutX="20.0" layoutY="339.0" text="Eyes:" />
+            <TextField fx:id="eyesField" layoutX="157.0" layoutY="334.0" prefWidth="90.0" />
+         </children>
+      </AnchorPane>
+      <TextArea fx:id="featuresArea" layoutX="374.0" layoutY="270.0" prefHeight="93.0" prefWidth="301.0" />
+      <Label layoutX="374.0" layoutY="243.0" text="Notable Features:" />
+      <ImageView fx:id="portraitView" fitHeight="150.0" fitWidth="150.0" layoutX="374.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="selectPortraitBtn" layoutX="396.0" layoutY="189.0" mnemonicParsing="false" onAction="#onButtonPressed" text="Select Portrait" />
+      <AnchorPane layoutX="527.0" layoutY="157.0" prefHeight="86.0" prefWidth="305.0">
+         <children>
+            <Label layoutX="64.0" layoutY="16.0" text="Earned XP:" />
+            <Label layoutX="48.0" layoutY="51.0" text="Total Credits:" />
+            <TextField fx:id="earnedXPField" layoutX="144.0" layoutY="13.0" prefHeight="27.0" prefWidth="106.0" />
+            <TextField fx:id="totalCreditsField" layoutX="144.0" layoutY="46.0" prefHeight="27.0" prefWidth="106.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
