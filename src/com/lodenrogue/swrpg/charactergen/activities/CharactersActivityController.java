@@ -61,19 +61,19 @@ public class CharactersActivityController implements Initializable {
 	}
 
 	private void createNewCharacter() {
-		// TODO
+		// TODO implement createNewCharacter
 	}
 
 	private void removeCharacter() {
-		// TODO
+		// TODO implement removeCharacter
 	}
 
 	private void selectCharacter() {
-		// TODO
+		// TODO implement selectCharacter
 	}
 
 	private void populateNames() {
-		// TODO
+		// TODO implement populateNames
 	}
 
 }

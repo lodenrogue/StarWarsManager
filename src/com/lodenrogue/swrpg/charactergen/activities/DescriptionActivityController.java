@@ -54,11 +54,11 @@ public class DescriptionActivityController implements Initializable {
 	}
 
 	private void fillGenderBox() {
-		// TODO
+		// TODO implement fillGenderBox
 	}
 
 	private void selectPortrait() {
-		// TODO
+		// TODO implement selectPortrait
 	}
 
 }
