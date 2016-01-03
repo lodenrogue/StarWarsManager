@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.BaseController">
+   <children>
+      <AnchorPane layoutX="576.0" layoutY="552.0" prefHeight="131.0" prefWidth="458.0" />
+      <AnchorPane layoutX="183.0" layoutY="42.0" prefHeight="40.0" prefWidth="850.0">
+         <children>
+            <fx:include source="currency.fxml" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="activityPane" layoutX="183.0" layoutY="94.0" prefHeight="454.0" prefWidth="850.0" />
+      <Button fx:id="charactersBtn" layoutX="39.0" layoutY="48.0" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="27.0" prefWidth="111.0" text="Characters" />
+      <Button fx:id="descriptionBtn" layoutX="39.0" layoutY="95.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Description" />
+      <Button fx:id="backgroundBtn" layoutX="39.0" layoutY="142.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Background" />
+      <Button fx:id="obligationsBtn" layoutX="39.0" layoutY="189.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Obligations" />
+      <Button fx:id="speciesBtn" layoutX="39.0" layoutY="236.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Species" />
+      <Button fx:id="careerBtn" layoutX="39.0" layoutY="283.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Career" />
+      <Button fx:id="characteristicsBtn" layoutX="39.0" layoutY="330.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Characteristics" />
+      <Button fx:id="specializationsBtn" layoutX="39.0" layoutY="377.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Specializations" />
+      <Button fx:id="motivationsBtn" layoutX="39.0" layoutY="424.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Motivations" />
+      <Button fx:id="skillsBtn" layoutX="39.0" layoutY="471.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Skills" />
+      <Button fx:id="equipmentBtn" layoutX="39.0" layoutY="518.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Equipment" />
+      <Label fx:id="currentScreenLbl" layoutX="350.0" layoutY="19.0" text="Characters" />
+   </children>
+</AnchorPane>
