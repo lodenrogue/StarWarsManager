@@ -1,4 +1,4 @@
-package com.lodenrogue.swrpg;
+package com.lodenrogue.swrpg.charactergen;
 
 import java.io.IOException;
 
@@ -14,7 +14,6 @@ public class CharacterGenApplication extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("base.fxml"));
-
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);

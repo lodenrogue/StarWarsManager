@@ -1,4 +1,4 @@
-package com.lodenrogue.swrpg;
+package com.lodenrogue.swrpg.charactergen;
 
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -6,12 +6,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.CharacteristicsDisplayController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.CharacteristicsDisplayController">
    <children>
       <ImageView fitHeight="200.0" fitWidth="647.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../data/character_stats.png" />
+            <Image url="@../../../../../data/character_stats.png" />
          </image>
       </ImageView>
       <Label fx:id="soakLbl" layoutX="83.0" layoutY="32.0" text="00">

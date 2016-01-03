@@ -1,8 +1,9 @@
-package com.lodenrogue.swrpg;
+package com.lodenrogue.swrpg.charactergen;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -21,6 +22,15 @@ public class OverviewController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		instance = this;
+		Platform.runLater(() -> clearLabels());
+		
+	}
+
+	private void clearLabels() {
+		characterNameLbl.setText("");
+		speciesLbl.setText("");
+		careerLbl.setText("");
+		specializationsLbl.setText("");
 	}
 
 	public static OverviewController getInstance() {
