@@ -7,13 +7,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.BaseController">
    <children>
-      <AnchorPane layoutX="576.0" layoutY="552.0" prefHeight="131.0" prefWidth="458.0" />
+      <AnchorPane layoutX="385.0" layoutY="481.0" prefHeight="200.0" prefWidth="647.0">
+         <children>
+            <fx:include source="characteristics_display.fxml" />
+         </children>
+      </AnchorPane>
       <AnchorPane layoutX="183.0" layoutY="42.0" prefHeight="40.0" prefWidth="850.0">
          <children>
             <fx:include source="currency.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="activityPane" layoutX="183.0" layoutY="94.0" prefHeight="454.0" prefWidth="850.0" />
+      <AnchorPane fx:id="activityPane" layoutX="183.0" layoutY="90.0" prefHeight="390.0" prefWidth="850.0" />
       <Button fx:id="charactersBtn" layoutX="39.0" layoutY="48.0" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="27.0" prefWidth="111.0" text="Characters" />
       <Button fx:id="descriptionBtn" layoutX="39.0" layoutY="95.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Description" />
       <Button fx:id="backgroundBtn" layoutX="39.0" layoutY="142.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="111.0" text="Background" />

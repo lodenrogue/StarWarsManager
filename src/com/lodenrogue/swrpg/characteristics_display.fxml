@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.CharacteristicsDisplayController">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="647.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../data/character_stats.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="soakLbl" layoutX="83.0" layoutY="32.0" text="00">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="woundsLbl" layoutX="233.0" layoutY="32.0" text="00">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="strainLbl" layoutX="381.0" layoutY="32.0" text="00">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="defenseRangedLbl" layoutX="516.0" layoutY="32.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="defendeMeleeLbl" layoutX="562.0" layoutY="32.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="brawnLbl" layoutX="61.0" layoutY="132.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="agilityLbl" layoutX="163.0" layoutY="132.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="intellectLbl" layoutX="265.0" layoutY="132.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="cunningLbl" layoutX="366.0" layoutY="132.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="willpowerLbl" layoutX="468.0" layoutY="132.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="presenceLbl" layoutX="569.0" layoutY="132.0" text="0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
