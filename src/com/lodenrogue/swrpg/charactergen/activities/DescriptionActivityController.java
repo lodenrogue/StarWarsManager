@@ -3,6 +3,7 @@ package com.lodenrogue.swrpg.charactergen.activities;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -42,6 +43,7 @@ public class DescriptionActivityController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		Platform.runLater(() -> fillGenderBox());
 	}
 
 	@FXML
@@ -49,6 +51,10 @@ public class DescriptionActivityController implements Initializable {
 		if (e.getSource().equals(selectPortraitBtn)) {
 			selectPortrait();
 		}
+	}
+
+	private void fillGenderBox() {
+		// TODO
 	}
 
 	private void selectPortrait() {
