@@ -1,4 +1,4 @@
-package com.lodenrogue.swrpg;
+package com.lodenrogue.swrpg.charactergen.activities;
 
 public enum ActivityState {
 	CHARACTERS, DESCRIPTION, BACKGROUND, OBLIGATIONS, SPECIES, CAREER, CHARACTERISTICS, SPECIALIZATIONS, MOTIVATIONS, SKILLS, EQUIPMENT;

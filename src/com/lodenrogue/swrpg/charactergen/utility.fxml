@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="145.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.UtilityController">
+   <children>
+      <Button fx:id="saveBtn" layoutX="81.0" layoutY="7.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="50.0" text="Save" />
+      <Button fx:id="printBtn" layoutX="12.0" layoutY="7.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="50.0" text="Print" />
+   </children>
+</AnchorPane>
