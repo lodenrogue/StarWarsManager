@@ -65,22 +65,19 @@ public class BaseController implements Initializable {
 	 */
 	@FXML
 	public void onButtonPressed(ActionEvent e) throws IOException {
+		saveData();
+		resetButtons();
+		((Button) e.getSource()).setDisable(true);
+		currentScreenLbl.setText(((Button) e.getSource()).getText());
+
 		if (e.getSource().equals(charactersBtn)) {
-			saveData();
-			resetButtons();
-			charactersBtn.setDisable(true);
 			loadActivity(ActivityState.CHARACTERS);
 		}
 		else if (e.getSource().equals(descriptionBtn)) {
-			saveData();
-			resetButtons();
-			descriptionBtn.setDisable(true);
 			loadActivity(ActivityState.DESCRIPTION);
 		}
-
-		// Update currentScreenLbl
-		if (e.getSource() instanceof Button) {
-			currentScreenLbl.setText(((Button) e.getSource()).getText());
+		else if (e.getSource().equals(backgroundBtn)) {
+			loadActivity(ActivityState.BACKGROUND);
 		}
 	}
 
@@ -95,6 +92,9 @@ public class BaseController implements Initializable {
 		}
 		else if (state.equals(ActivityState.DESCRIPTION)) {
 			fxmlResource = "activities/description_activity.fxml";
+		}
+		else if (state.equals(ActivityState.BACKGROUND)) {
+			fxmlResource = "activities/background_activity.fxml";
 		}
 
 		if (fxmlResource.length() > 0) {

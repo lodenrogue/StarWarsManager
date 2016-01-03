@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.activities.BackgroundActivityController">
+   <children>
+      <AnchorPane prefHeight="195.0" prefWidth="425.0">
+         <children>
+            <Label layoutX="12.0" layoutY="10.0" text="Social Class:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="socialClassBox" layoutX="242.0" layoutY="7.0" prefHeight="27.0" prefWidth="174.0" />
+            <WebView fx:id="socialClassWebView" layoutX="12.0" layoutY="40.0" prefHeight="151.0" prefWidth="404.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="195.0" prefHeight="195.0" prefWidth="425.0">
+         <children>
+            <Label layoutX="12.0" layoutY="10.0" text="Background Hook:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="backgroundBox" layoutX="242.0" layoutY="7.0" prefHeight="27.0" prefWidth="174.0" />
+            <WebView fx:id="backgroundWebView" layoutX="12.0" layoutY="40.0" prefHeight="151.0" prefWidth="404.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="430.0" layoutY="10.0" text="Story:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="storyArea" layoutX="430.0" layoutY="40.0" prefHeight="346.0" prefWidth="414.0" />
+   </children>
+</AnchorPane>
