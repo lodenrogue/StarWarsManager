@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.lodenrogue.swrpg.charactergen.activities.ActivityState;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -98,8 +99,16 @@ public class BaseController implements Initializable {
 		}
 
 		if (fxmlResource.length() > 0) {
-			Parent activityRoot = FXMLLoader.load(getClass().getResource(fxmlResource));
-			activityPane.getChildren().setAll(activityRoot.getChildrenUnmodifiable());
+			final String resource = fxmlResource;
+			Platform.runLater(() -> {
+				try {
+					Parent activityRoot = FXMLLoader.load(getClass().getResource(resource));
+					activityPane.getChildren().setAll(activityRoot.getChildrenUnmodifiable());
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			});
 		}
 	}
 
