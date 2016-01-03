@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.activities.CharactersActivityController">
+   <children>
+      <Label layoutX="14.0" layoutY="20.0" text="Select Character:" />
+      <ScrollPane fx:id="charactersPane" layoutX="13.0" layoutY="44.0" prefHeight="200.0" prefWidth="259.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" />
+        </content>
+      </ScrollPane>
+      <Button fx:id="selectBtn" layoutX="319.0" layoutY="50.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="68.0" text="Select" />
+      <Button fx:id="removeBtn" layoutX="319.0" layoutY="97.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="68.0" text="Remove" />
+      <Button fx:id="newBtn" layoutX="319.0" layoutY="145.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="68.0" text="New" />
+      <ImageView fx:id="portraitView" fitHeight="132.0" fitWidth="129.0" layoutX="13.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane layoutX="147.0" layoutY="250.0" prefHeight="132.0" prefWidth="240.0">
+         <children>
+            <Label layoutX="3.0" layoutY="19.0" text="Name:" />
+            <Label layoutX="3.0" layoutY="44.0" text="Player:" />
+            <Label layoutX="3.0" layoutY="69.0" text="Species:" />
+            <Label layoutX="3.0" layoutY="94.0" text="Career:" />
+            <Label fx:id="characterNameLbl" layoutX="94.0" layoutY="19.0" text="First Last" />
+            <Label fx:id="playerNameLbl" layoutX="94.0" layoutY="44.0" text="First Last" />
+            <Label fx:id="speciesLbl" layoutX="94.0" layoutY="69.0" text="Some Species" />
+            <Label fx:id="careerLbl" layoutX="94.0" layoutY="94.0" text="Some Career" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
