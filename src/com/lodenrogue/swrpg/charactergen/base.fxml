@@ -7,7 +7,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.BaseController">
    <children>
       <Label fx:id="currentScreenLbl" layoutX="350.0" layoutY="19.0" text="Characters" />
-      <AnchorPane layoutX="865.0" layoutY="6.0" prefHeight="40.0" prefWidth="145.0">
+      <AnchorPane layoutX="854.0" layoutY="4.0" prefHeight="40.0" prefWidth="145.0">
          <children>
             <fx:include source="utility.fxml" />
          </children>

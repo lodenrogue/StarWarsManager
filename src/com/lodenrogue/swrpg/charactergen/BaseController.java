@@ -68,20 +68,25 @@ public class BaseController implements Initializable {
 	public void onButtonPressed(ActionEvent e) throws IOException {
 		saveData();
 		resetButtons();
-		((Button) e.getSource()).setDisable(true);
-		currentScreenLbl.setText(((Button) e.getSource()).getText());
+		
+		Button button = ((Button) e.getSource());
+		button.setDisable(true);
+		currentScreenLbl.setText(button.getText());
 
-		if (e.getSource().equals(charactersBtn)) {
+		if (button.equals(charactersBtn)) {
 			loadActivity(ActivityState.CHARACTERS);
 		}
-		else if (e.getSource().equals(descriptionBtn)) {
+		else if (button.equals(descriptionBtn)) {
 			loadActivity(ActivityState.DESCRIPTION);
 		}
-		else if (e.getSource().equals(backgroundBtn)) {
+		else if (button.equals(backgroundBtn)) {
 			loadActivity(ActivityState.BACKGROUND);
 		}
-		else if (e.getSource().equals(obligationsBtn)) {
+		else if (button.equals(obligationsBtn)) {
 			loadActivity(ActivityState.OBLIGATIONS);
+		}
+		else if (button.equals(speciesBtn)) {
+			loadActivity(ActivityState.SPECIES);
 		}
 	}
 
@@ -102,6 +107,9 @@ public class BaseController implements Initializable {
 		}
 		else if (state.equals(ActivityState.OBLIGATIONS)) {
 			fxmlResource = "activities/obligations_activity.fxml";
+		}
+		else if (state.equals(ActivityState.SPECIES)) {
+			fxmlResource = "activities/species_activity.fxml";
 		}
 
 		if (fxmlResource.length() > 0) {
