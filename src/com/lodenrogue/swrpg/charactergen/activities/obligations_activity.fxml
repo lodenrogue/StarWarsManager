@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.activities.ObligationsActivityController">
+   <children>
+      <HBox layoutX="14.0" layoutY="8.0" spacing="20.0">
+         <children>
+            <VBox layoutX="14.0" layoutY="14.0" spacing="10.0">
+               <children>
+                  <Label text="Select Obligation:" />
+                  <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="173.0" prefWidth="201.0">
+                     <content>
+                        <TableView fx:id="obligationsTable" prefHeight="187.0" prefWidth="183.0">
+                          <columns>
+                            <TableColumn editable="false" prefWidth="116.31531524658203" resizable="false" text="Type" />
+                            <TableColumn editable="false" prefWidth="74.6846923828125" resizable="false" text="Size" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+                  <HBox alignment="CENTER" layoutX="14.0" layoutY="206.0" prefHeight="27.0" prefWidth="201.0" spacing="65.0">
+                     <children>
+                        <Button fx:id="newBtn" layoutX="14.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="68.0" text="New" />
+                        <Button fx:id="removeBtn" layoutX="133.0" layoutY="206.0" mnemonicParsing="false" onAction="#onButtonPressed" prefWidth="68.0" text="Remove" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="233.0" layoutY="8.0" prefHeight="376.0" prefWidth="398.0" spacing="10.0">
+               <children>
+                  <Label layoutX="256.0" layoutY="20.0" text="Notes:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="notesArea" layoutX="243.0" layoutY="83.0" prefHeight="193.0" prefWidth="398.0" wrapText="true" />
+                  <WebView fx:id="descWebView" prefHeight="191.0" prefWidth="456.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

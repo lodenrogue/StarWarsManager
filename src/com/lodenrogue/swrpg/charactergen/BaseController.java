@@ -80,6 +80,9 @@ public class BaseController implements Initializable {
 		else if (e.getSource().equals(backgroundBtn)) {
 			loadActivity(ActivityState.BACKGROUND);
 		}
+		else if (e.getSource().equals(obligationsBtn)) {
+			loadActivity(ActivityState.OBLIGATIONS);
+		}
 	}
 
 	private void saveData() {
@@ -96,6 +99,9 @@ public class BaseController implements Initializable {
 		}
 		else if (state.equals(ActivityState.BACKGROUND)) {
 			fxmlResource = "activities/background_activity.fxml";
+		}
+		else if (state.equals(ActivityState.OBLIGATIONS)) {
+			fxmlResource = "activities/obligations_activity.fxml";
 		}
 
 		if (fxmlResource.length() > 0) {
