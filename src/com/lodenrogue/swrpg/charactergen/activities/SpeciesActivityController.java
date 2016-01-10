@@ -55,6 +55,10 @@ public class SpeciesActivityController implements Initializable {
 		}
 	}
 
+	private void loadOptions(Species species) {
+		// TODO Load species options into speciesOptionsPane
+	}
+
 	private void populateSpeciesBox() {
 		// TODO populate species combo box
 	}
@@ -65,10 +69,6 @@ public class SpeciesActivityController implements Initializable {
 
 	private void updateStats(Species species) {
 		// TODO Update stats to reflect species choice
-	}
-
-	private void loadOptions(Species species) {
-		// TODO Load species options into speciesOptionsPane
 	}
 
 	private void updateDescriptions(Species species) {

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="activityPane" prefHeight="390.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.charactergen.activities.CareerActivityController">
+   <children>
+      <VBox layoutX="8.0" layoutY="9.0" spacing="8.0">
+         <children>
+            <Label layoutX="8.0" layoutY="9.0" text="Select Career:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="careerComboBox" layoutX="8.0" layoutY="36.0" onAction="#onComboBoxChange" prefHeight="27.0" prefWidth="535.0" />
+            <WebView fx:id="careerWebView" prefHeight="115.0" prefWidth="200.0" />
+            <Label text="Select Starting Specialization:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox fx:id="specComboBox" onAction="#onComboBoxChange" prefHeight="27.0" prefWidth="535.0" />
+            <WebView fx:id="specWebView" prefHeight="115.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="559.0" spacing="8.0">
+         <children>
+            <VBox layoutX="559.0" spacing="15.0">
+               <children>
+                  <Label layoutX="639.0" layoutY="18.0" text="Select Career Skills" />
+                  <HBox spacing="35.0">
+                     <children>
+                        <VBox prefHeight="87.0" prefWidth="80.0" spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="careerSkill1" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill1" />
+                              <CheckBox fx:id="careerSkill2" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill2" />
+                              <CheckBox fx:id="careerSkill3" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill3" />
+                              <CheckBox fx:id="careerSkill4" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill4" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="26.0" prefWidth="80.0" spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="careerSkill5" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill5" />
+                              <CheckBox fx:id="careerSkill6" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill6" />
+                              <CheckBox fx:id="careerSkill7" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill7" />
+                              <CheckBox fx:id="careerSkill8" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill8" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label fx:id="careerSkillInfoLbl" text="You may choose 0 more skill(s)">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="40.0" right="40.0" top="15.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="140.0" prefWidth="272.0" spacing="15.0">
+               <children>
+                  <Label text="Select Specialization Skills" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <CheckBox fx:id="specSkill1" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill1" />
+                        <CheckBox fx:id="specSkill2" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill2" />
+                        <CheckBox fx:id="specSkill3" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill3" />
+                        <CheckBox fx:id="specSkill4" mnemonicParsing="false" onAction="#onCheckBoxEvent" text="skill4" />
+                     </children>
+                  </VBox>
+                  <Label fx:id="specSkillInfoLbl" text="You may choose 0 more skill(s)">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="40.0" right="40.0" top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

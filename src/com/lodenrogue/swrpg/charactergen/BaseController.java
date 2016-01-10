@@ -68,7 +68,7 @@ public class BaseController implements Initializable {
 	public void onButtonPressed(ActionEvent e) throws IOException {
 		saveData();
 		resetButtons();
-		
+
 		Button button = ((Button) e.getSource());
 		button.setDisable(true);
 		currentScreenLbl.setText(button.getText());
@@ -87,6 +87,9 @@ public class BaseController implements Initializable {
 		}
 		else if (button.equals(speciesBtn)) {
 			loadActivity(ActivityState.SPECIES);
+		}
+		else if (button.equals(careerBtn)) {
+			loadActivity(ActivityState.CAREER);
 		}
 	}
 
@@ -110,6 +113,9 @@ public class BaseController implements Initializable {
 		}
 		else if (state.equals(ActivityState.SPECIES)) {
 			fxmlResource = "activities/species_activity.fxml";
+		}
+		else if (state.equals(ActivityState.CAREER)) {
+			fxmlResource = "activities/career_activity.fxml";
 		}
 
 		if (fxmlResource.length() > 0) {
