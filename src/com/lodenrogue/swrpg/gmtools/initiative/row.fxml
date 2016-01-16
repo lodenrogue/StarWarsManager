@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="27.0" prefWidth="380.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.gmtools.initiative.CharacterRowController">
+   <children>
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Label text="Success:" />
+            <TextField fx:id="successField" prefHeight="27.0" prefWidth="50.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Label text="Advantage:" />
+            <TextField fx:id="advantageField" prefHeight="27.0" prefWidth="50.0" />
+         </children>
+      </HBox>
+      <ComboBox fx:id="entityTypeBox" prefHeight="27.0" prefWidth="87.0" />
+   </children>
+</HBox>
