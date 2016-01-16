@@ -20,40 +20,40 @@ public class Initiative {
 	}
 
 	public List<Entity> getOrder() {
-		List<Entity> entityOrder = new ArrayList<>();
+		List<Entity> orderedList = new ArrayList<>();
 
 		for (Entity entity : entities) {
-			if (entityOrder.size() == 0) {
-				entityOrder.add(entity);
+			if (orderedList.size() == 0) {
+				orderedList.add(entity);
 			}
 			else {
 				boolean added = false;
-				for (Entity eOrder : entityOrder) {
-					if (entity.getSuccess() == eOrder.getSuccess()) {
-						if (entity.getAdvantage() > eOrder.getAdvantage()) {
-							entityOrder.add(entityOrder.indexOf(eOrder), entity);
+				for (Entity orderedEntity : orderedList) {
+					if (entity.getSuccess() == orderedEntity.getSuccess()) {
+						if (entity.getAdvantage() > orderedEntity.getAdvantage()) {
+							orderedList.add(orderedList.indexOf(orderedEntity), entity);
 							added = true;
 							break;
 						}
-						else if (entity.getAdvantage() == eOrder.getAdvantage()) {
+						else if (entity.getAdvantage() == orderedEntity.getAdvantage()) {
 							if (entity.getType().equals(EntityType.PC)) {
-								entityOrder.add(entityOrder.indexOf(eOrder), entity);
+								orderedList.add(orderedList.indexOf(orderedEntity), entity);
 								added = true;
 								break;
 							}
 						}
 					}
-					else if (entity.getSuccess() > eOrder.getSuccess()) {
-						entityOrder.add(entityOrder.indexOf(eOrder), entity);
+					else if (entity.getSuccess() > orderedEntity.getSuccess()) {
+						orderedList.add(orderedList.indexOf(orderedEntity), entity);
 						added = true;
 						break;
 					}
 				}
 				if (!added) {
-					entityOrder.add(entity);
+					orderedList.add(entity);
 				}
 			}
 		}
-		return entityOrder;
+		return orderedList;
 	}
 }

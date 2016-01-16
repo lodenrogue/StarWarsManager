@@ -11,6 +11,8 @@ public class InitiativeTest {
 		initiative.addEntity(new Entity(EntityType.PC, 1, 3));
 		initiative.addEntity(new Entity(EntityType.PC, 1, 3));
 
+		
+
 		for (Entity e : initiative.getOrder()) {
 			System.out.println(e.getType() + " " + e.getSuccess() + " " + e.getAdvantage());
 		}
