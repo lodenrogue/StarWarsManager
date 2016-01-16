@@ -45,7 +45,7 @@ public class CharacterRowController implements Initializable {
 		return parseInt(advantageField.getText(), 0);
 	}
 
-	public int parseInt(String value, int defaultValue) {
+	private int parseInt(String value, int defaultValue) {
 		try {
 			return Integer.parseInt(value);
 		}
