@@ -16,7 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
 public class ResultsController implements Initializable {
-	private static final String IMAGE_PATH = System.getProperty("user.dir") + "/data/dice/";
+	private static final String IMAGE_PATH = "data/dice/";
 	private static ResultsController instance;
 	@FXML
 	private HBox resultsBox;
@@ -59,6 +59,9 @@ public class ResultsController implements Initializable {
 		else if (result.equals(Result.FAILURE)) {
 			url = IMAGE_PATH + "lightside.png";
 		}
+		else if (result.equals(Result.BLANK)) {
+			url = IMAGE_PATH + "net_zero.png";
+		}
 
 		if (url.length() > 0) {
 			try {
@@ -69,7 +72,6 @@ public class ResultsController implements Initializable {
 			catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
-
 		}
 	}
 

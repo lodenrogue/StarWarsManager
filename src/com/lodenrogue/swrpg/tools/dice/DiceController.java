@@ -94,8 +94,13 @@ public class DiceController implements Initializable {
 	 * @param results
 	 */
 	private void updateResults(List<Result> results) {
-		for (Result r : results) {
-			resultsController.addResult(r);
+		if (results.size() > 0) {
+			for (Result r : results) {
+				resultsController.addResult(r);
+			}
+		}
+		else {
+			resultsController.addResult(Result.BLANK);
 		}
 	}
 
