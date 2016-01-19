@@ -1,4 +1,4 @@
-package com.lodenrogue.swrpg.gmtools.initiative;
+package com.lodenrogue.swrpg.tools.initiative;
 
 public class InitiativeTest {
 
