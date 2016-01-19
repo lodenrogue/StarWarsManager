@@ -1,11 +1,9 @@
 package com.lodenrogue.swrpg.tools.dice;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.lodenrogue.swrpg.Main;
 import com.lodenrogue.swrpg.tools.dice.result.Result;
 
 import javafx.application.Platform;
@@ -16,7 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
 public class ResultsController implements Initializable {
-	private static final String IMAGE_PATH = "data/dice/";
+	private static final String IMAGE_PATH = Main.class.getResource("data/dice/").toExternalForm();
 	private static ResultsController instance;
 	@FXML
 	private HBox resultsBox;
@@ -64,14 +62,8 @@ public class ResultsController implements Initializable {
 		}
 
 		if (url.length() > 0) {
-			try {
-				InputStream is = new FileInputStream(url);
-				ImageView resultImage = new ImageView(new Image(is));
-				Platform.runLater(() -> resultsBox.getChildren().add(resultImage));
-			}
-			catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
+			ImageView resultImage = new ImageView(new Image(url));
+			Platform.runLater(() -> resultsBox.getChildren().add(resultImage));
 		}
 	}
 

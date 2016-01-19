@@ -13,37 +13,37 @@
          <children>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../data/dice/proficiency.png" />
+                  <Image url="@dice/proficiency.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../data/dice/challenge.png" />
+                  <Image url="@dice/challenge.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../data/dice/ability.png" />
+                  <Image url="@dice/ability.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../data/dice/difficulty.png" />
+                  <Image url="@dice/difficulty.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../data/dice/boost.png" />
+                  <Image url="@dice/boost.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../data/dice/setback.png" />
+                  <Image url="@dice/setback.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../data/dice/force.png" />
+                  <Image url="@dice/force.png" />
                </image>
             </ImageView>
          </children>
@@ -88,7 +88,7 @@
             <Insets bottom="20.0" top="20.0" />
          </VBox.margin>
       </HBox>
-      <fx:include source="results.fxml" />
+      <fx:include source="dice_results.fxml" />
    </children>
    <padding>
       <Insets left="10.0" right="10.0" />

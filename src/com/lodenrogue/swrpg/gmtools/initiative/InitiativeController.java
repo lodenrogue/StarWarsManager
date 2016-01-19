@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.lodenrogue.swrpg.Main;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -84,7 +86,7 @@ public class InitiativeController implements Initializable {
 
 	private void addRow() {
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("row.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("data/initiative_row.fxml"));
 			Parent p = fxmlLoader.load();
 
 			CharacterRowController row = ((CharacterRowController) fxmlLoader.getController());
