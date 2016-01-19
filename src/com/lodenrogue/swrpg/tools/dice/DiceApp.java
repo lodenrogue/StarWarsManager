@@ -1,4 +1,4 @@
-package com.lodenrogue.swrpg.gmtools.initiative;
+package com.lodenrogue.swrpg.tools.dice;
 
 import java.io.IOException;
 
@@ -8,16 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class InitiativeApp extends Application {
+public class DiceApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("base.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("dice_roller.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
-			primaryStage.setTitle("Initiative Tool");
+			primaryStage.setTitle("Dice Roller");
 			primaryStage.show();
 		}
 		catch (IOException e) {
