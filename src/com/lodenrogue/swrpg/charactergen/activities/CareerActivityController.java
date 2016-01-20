@@ -1,7 +1,11 @@
 package com.lodenrogue.swrpg.charactergen.activities;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
+
+import com.lodenrogue.swrpg.charactergen.file.Saveable;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +15,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.web.WebView;
 
-public class CareerActivityController implements Initializable {
+public class CareerActivityController implements Initializable, Saveable {
+	private static final String ID = "career";
+	private static CareerActivityController instance;
+
 	@FXML
 	private ComboBox<String> careerComboBox;
 	@FXML
@@ -51,7 +58,7 @@ public class CareerActivityController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
+		instance = this;
 	}
 
 	@FXML
@@ -106,6 +113,22 @@ public class CareerActivityController implements Initializable {
 
 	private void updateSpecSkills(Specialization spec) {
 		// TODO update specSkill check boxes
+	}
+
+	public static CareerActivityController getInstance() {
+		return instance;
+	}
+
+	@Override
+	public Map<String, String> getKeyValuePairs() {
+		// TODO add data to map
+		Map<String, String> kvp = new HashMap<>();
+		return kvp;
+	}
+
+	@Override
+	public String getName() {
+		return ID;
 	}
 
 }

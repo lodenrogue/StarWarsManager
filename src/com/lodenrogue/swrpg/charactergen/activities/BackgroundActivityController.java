@@ -5,7 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
+
+import com.lodenrogue.swrpg.charactergen.file.Saveable;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -15,9 +19,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.web.WebView;
 
-public class BackgroundActivityController implements Initializable {
+public class BackgroundActivityController implements Initializable, Saveable {
 	private static final String SOCIAL_PATH = "data/social/";
 	private static final String BACKGROUND_PATH = "data/background/";
+	private static final String ID = "background";
+	private static BackgroundActivityController instance;
+
 	@FXML
 	private ComboBox<String> socialClassBox;
 	@FXML
@@ -31,6 +38,7 @@ public class BackgroundActivityController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		instance = this;
 		Platform.runLater(() -> {
 			fillSocialClassBox();
 			fillBackgroundBox();
@@ -81,6 +89,22 @@ public class BackgroundActivityController implements Initializable {
 
 	private void fillBackgroundBox() {
 		// TODO implement fillBackgroundBox
+	}
+
+	public static BackgroundActivityController getInstance() {
+		return instance;
+	}
+
+	@Override
+	public Map<String, String> getKeyValuePairs() {
+		//TODO add data to map
+		Map<String, String> kvp = new HashMap<>();
+		return kvp;
+	}
+
+	@Override
+	public String getName() {
+		return ID;
 	}
 
 }

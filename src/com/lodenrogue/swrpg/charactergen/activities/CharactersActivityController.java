@@ -75,5 +75,4 @@ public class CharactersActivityController implements Initializable {
 	private void populateNames() {
 		// TODO implement populateNames
 	}
-
 }

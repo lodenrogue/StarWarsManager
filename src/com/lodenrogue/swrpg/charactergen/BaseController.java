@@ -2,9 +2,17 @@ package com.lodenrogue.swrpg.charactergen;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 
+import com.lodenrogue.swrpg.Main;
 import com.lodenrogue.swrpg.charactergen.activities.ActivityState;
+import com.lodenrogue.swrpg.charactergen.activities.BackgroundActivityController;
+import com.lodenrogue.swrpg.charactergen.activities.CareerActivityController;
+import com.lodenrogue.swrpg.charactergen.activities.DescriptionActivityController;
+import com.lodenrogue.swrpg.charactergen.activities.ObligationsActivityController;
+import com.lodenrogue.swrpg.charactergen.activities.SpeciesActivityController;
+import com.lodenrogue.swrpg.charactergen.file.DataSaver;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -17,6 +25,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 public class BaseController implements Initializable {
+	private static final String DATA_FOLDER = "data/character_gen/";
 	@FXML
 	private Label currentScreenLbl;
 	@FXML
@@ -44,16 +53,15 @@ public class BaseController implements Initializable {
 	@FXML
 	private AnchorPane activityPane;
 
+	private DataSaver dataSaver;
+	private UtilityController utility;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		try {
-			charactersBtn.setDisable(true);
-			loadActivity(ActivityState.CHARACTERS);
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-
+		dataSaver = new DataSaver(new HashSet<>());
+		utility = UtilityController.getInstance();
+		charactersBtn.setDisable(true);
+		loadActivity(ActivityState.CHARACTERS);
 	}
 
 	/**
@@ -65,8 +73,8 @@ public class BaseController implements Initializable {
 	 * @throws IOException
 	 */
 	@FXML
-	public void onButtonPressed(ActionEvent e) throws IOException {
-		saveData();
+	public void onButtonPressed(ActionEvent e) {
+		saveData("tmp.txt");
 		resetButtons();
 
 		Button button = ((Button) e.getSource());
@@ -93,42 +101,54 @@ public class BaseController implements Initializable {
 		}
 	}
 
-	private void saveData() {
-		// TODO implement saveData
+	private void saveData(String fileName) {
+		// TODO get character name or file save name from user
+		utility.save(dataSaver, fileName);
 	}
 
-	private void loadActivity(ActivityState state) throws IOException {
-		String fxmlResource = "";
+	private void loadActivity(ActivityState state) {
 		if (state.equals(ActivityState.CHARACTERS)) {
-			fxmlResource = "activities/characters_activity.fxml";
+			Platform.runLater(() -> loadActivityUI("characters_activity.fxml"));
 		}
 		else if (state.equals(ActivityState.DESCRIPTION)) {
-			fxmlResource = "activities/description_activity.fxml";
+			Platform.runLater(() -> {
+				loadActivityUI("description_activity.fxml");
+				dataSaver.addSaveable(DescriptionActivityController.getInstance());
+			});
 		}
 		else if (state.equals(ActivityState.BACKGROUND)) {
-			fxmlResource = "activities/background_activity.fxml";
+			Platform.runLater(() -> {
+				loadActivityUI("background_activity.fxml");
+				dataSaver.addSaveable(BackgroundActivityController.getInstance());
+			});
 		}
 		else if (state.equals(ActivityState.OBLIGATIONS)) {
-			fxmlResource = "activities/obligations_activity.fxml";
+			Platform.runLater(() -> {
+				loadActivityUI("obligations_activity.fxml");
+				dataSaver.addSaveable(ObligationsActivityController.getInstance());
+			});
 		}
 		else if (state.equals(ActivityState.SPECIES)) {
-			fxmlResource = "activities/species_activity.fxml";
+			Platform.runLater(() -> {
+				loadActivityUI("species_activity.fxml");
+				dataSaver.addSaveable(SpeciesActivityController.getInstance());
+			});
 		}
 		else if (state.equals(ActivityState.CAREER)) {
-			fxmlResource = "activities/career_activity.fxml";
-		}
-
-		if (fxmlResource.length() > 0) {
-			final String resource = fxmlResource;
 			Platform.runLater(() -> {
-				try {
-					Parent activityRoot = FXMLLoader.load(getClass().getResource(resource));
-					activityPane.getChildren().setAll(activityRoot.getChildrenUnmodifiable());
-				}
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+				loadActivityUI("career_activity.fxml");
+				dataSaver.addSaveable(CareerActivityController.getInstance());
 			});
+		}
+	}
+
+	private void loadActivityUI(String fileName) {
+		try {
+			Parent activityRoot = FXMLLoader.load(Main.class.getResource(DATA_FOLDER + fileName));
+			activityPane.getChildren().setAll(activityRoot.getChildrenUnmodifiable());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

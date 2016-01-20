@@ -1,8 +1,13 @@
 package com.lodenrogue.swrpg.charactergen.activities;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
+import com.lodenrogue.swrpg.charactergen.file.Saveable;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,7 +16,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.web.WebView;
 
-public class ObligationsActivityController implements Initializable {
+public class ObligationsActivityController implements Initializable, Saveable {
+	private static final String ID = "obligations";
+	private static ObligationsActivityController instance;
+
 	@FXML
 	private TableView<String> obligationsTable;
 	@FXML
@@ -25,7 +33,8 @@ public class ObligationsActivityController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		populateTable();
+		instance = this;
+		Platform.runLater(() -> populateTable());
 	}
 
 	@FXML
@@ -48,6 +57,22 @@ public class ObligationsActivityController implements Initializable {
 
 	private void populateTable() {
 		// TODO populate table with obligations
+	}
+
+	public static ObligationsActivityController getInstance() {
+		return instance;
+	}
+
+	@Override
+	public Map<String, String> getKeyValuePairs() {
+		// TODO add data to map
+		Map<String, String> kvp = new HashMap<>();
+		return kvp;
+	}
+
+	@Override
+	public String getName() {
+		return ID;
 	}
 
 	// private void onItemSelected() {

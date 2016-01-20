@@ -1,8 +1,13 @@
 package com.lodenrogue.swrpg.charactergen.activities;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
+import com.lodenrogue.swrpg.charactergen.file.Saveable;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,7 +17,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
 
-public class SpeciesActivityController implements Initializable {
+public class SpeciesActivityController implements Initializable, Saveable {
+	private static final String ID = "species";
+	private static SpeciesActivityController instance;
+
 	@FXML
 	private ComboBox<String> speciesBox;
 	@FXML
@@ -38,7 +46,8 @@ public class SpeciesActivityController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		populateSpeciesBox();
+		instance = this;
+		Platform.runLater(() -> populateSpeciesBox());
 	}
 
 	@FXML
@@ -82,6 +91,22 @@ public class SpeciesActivityController implements Initializable {
 
 	private void updateBonusDescription(Species species) {
 		// TODO update bonus description webview
+	}
+
+	public static SpeciesActivityController getInstance() {
+		return instance;
+	}
+
+	@Override
+	public Map<String, String> getKeyValuePairs() {
+		// TODO add data to map
+		Map<String, String> kvp = new HashMap<>();
+		return kvp;
+	}
+
+	@Override
+	public String getName() {
+		return ID;
 	}
 
 }

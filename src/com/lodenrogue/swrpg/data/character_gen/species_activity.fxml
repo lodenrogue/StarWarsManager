@@ -31,7 +31,7 @@
       </VBox>
       <ImageView fitHeight="67.0" fitWidth="462.0" layoutX="386.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../data/characteristics.png" />
+            <Image url="@images/characteristics.png" />
          </image>
       </ImageView>
       <Label fx:id="brawnLbl" layoutX="428.0" layoutY="30.0" text="0">

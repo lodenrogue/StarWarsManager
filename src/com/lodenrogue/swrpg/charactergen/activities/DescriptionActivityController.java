@@ -1,7 +1,11 @@
 package com.lodenrogue.swrpg.charactergen.activities;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
+
+import com.lodenrogue.swrpg.charactergen.file.Saveable;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -13,7 +17,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
-public class DescriptionActivityController implements Initializable {
+public class DescriptionActivityController implements Initializable, Saveable {
+	private static final String ID = "description";
+	private static DescriptionActivityController instance;
+
 	@FXML
 	private TextField playerNameField;
 	@FXML
@@ -43,6 +50,7 @@ public class DescriptionActivityController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		instance = this;
 		Platform.runLater(() -> fillGenderBox());
 	}
 
@@ -59,6 +67,22 @@ public class DescriptionActivityController implements Initializable {
 
 	private void selectPortrait() {
 		// TODO implement selectPortrait
+	}
+
+	public static DescriptionActivityController getInstance() {
+		return instance;
+	}
+
+	@Override
+	public Map<String, String> getKeyValuePairs() {
+		// TODO add data to map
+		Map<String, String> kvp = new HashMap<>();
+		return kvp;
+	}
+
+	@Override
+	public String getName() {
+		return ID;
 	}
 
 }
