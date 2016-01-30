@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<TabPane prefHeight="420.0" prefWidth="665.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Dice">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="dice_roller.fxml" />
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Initiative">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="initiative_base.fxml" />
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Untitled Tab">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="385.0" prefWidth="665.0" />
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
