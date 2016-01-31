@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="238.0" prefWidth="316.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.tools.obligation.ObligationCreatorController">
+   <children>
+      <Label fx:id="playerNameLbl" layoutX="50.0" layoutY="32.0" text="Player Name:" />
+      <Label fx:id="characterNameLbl" layoutX="28.0" layoutY="71.0" text="Character Name:" />
+      <Label layoutX="65.0" layoutY="110.0" text="Obligation:" />
+      <Label fx:id="amountLbl" layoutX="80.0" layoutY="147.0" text="Amount:" />
+      <TextField fx:id="playerNameField" layoutX="139.0" layoutY="29.0" prefHeight="27.0" prefWidth="136.0" />
+      <TextField fx:id="characterNameField" layoutX="139.0" layoutY="68.0" prefHeight="27.0" prefWidth="136.0" />
+      <TextField fx:id="amountField" layoutX="139.0" layoutY="144.0" prefHeight="27.0" prefWidth="136.0" />
+      <Button fx:id="createBtn" layoutX="139.0" layoutY="188.0" mnemonicParsing="false" onAction="#onButtonPressed" text="Create" />
+      <ComboBox fx:id="obligationsBox" layoutX="139.0" layoutY="106.0" prefHeight="27.0" prefWidth="136.0" />
+   </children>
+</AnchorPane>

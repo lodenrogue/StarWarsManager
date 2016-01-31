@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="385.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lodenrogue.swrpg.tools.obligation.ObligationsController">
+   <children>
+      <HBox layoutX="20.0" layoutY="20.0" prefHeight="253.0" prefWidth="595.0" spacing="50.0">
+         <children>
+            <ScrollPane layoutX="22.0" layoutY="24.0" prefViewportHeight="234.0" prefViewportWidth="476.0" prefWidth="475.0">
+               <content>
+                  <TableView fx:id="obligationTable" prefHeight="251.0" prefWidth="473.0">
+                    <columns>
+                      <TableColumn fx:id="playerColumn" maxWidth="118.0" minWidth="118.0" prefWidth="118.0" text="Player" />
+                      <TableColumn fx:id="characterColumn" maxWidth="118.0" minWidth="118.0" prefWidth="118.0" text="Character" />
+                        <TableColumn fx:id="typeColumn" maxWidth="118.0" minWidth="118.0" prefWidth="118.0" text="Type" />
+                        <TableColumn fx:id="amountColumn" maxWidth="118.0" minWidth="118.0" prefWidth="118.0" text="Amount" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <VBox layoutX="546.0" layoutY="24.0" prefHeight="180.0" prefWidth="70.0" spacing="25.0">
+               <children>
+                  <Button fx:id="loadBtn" layoutX="546.0" layoutY="34.0" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="0.0" prefWidth="70.0" text="Load..." />
+                  <Button fx:id="saveBtn" layoutX="547.0" layoutY="89.0" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="0.0" prefWidth="70.0" text="Save..." />
+                  <Button fx:id="newBtn" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="0.0" prefWidth="70.0" text="New...">
+                     <VBox.margin>
+                        <Insets top="95.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="20.0" layoutY="319.0" prefHeight="17.0" prefWidth="475.0" spacing="50.0">
+         <children>
+            <Label fx:id="chosenPlayer" text="Player" />
+            <Label fx:id="chosenCharacter" text="Character" />
+            <Label fx:id="chosenObligation" text="Obligation" />
+            <Label fx:id="chosenAmount" text="Amount" />
+         </children>
+      </HBox>
+      <Button fx:id="rollBtn" layoutX="545.0" layoutY="314.0" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="0.0" prefWidth="70.0" text="Roll" />
+   </children>
+</AnchorPane>
