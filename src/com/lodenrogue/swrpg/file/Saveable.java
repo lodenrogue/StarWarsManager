@@ -1,4 +1,4 @@
-package com.lodenrogue.swrpg.charactergen.file;
+package com.lodenrogue.swrpg.file;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ public interface Saveable {
 	
 	public Map<String, String> getKeyValuePairs();
 	
-	public String getName();
+	public String getId();
 	
 
 }

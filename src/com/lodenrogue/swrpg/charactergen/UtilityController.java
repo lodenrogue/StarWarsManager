@@ -1,10 +1,11 @@
 package com.lodenrogue.swrpg.charactergen;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 
-import com.lodenrogue.swrpg.charactergen.file.DataSaver;
+import com.lodenrogue.swrpg.file.DataSaver;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,7 +39,12 @@ public class UtilityController implements Initializable {
 		}
 		else if (e.getSource().equals(saveBtn)) {
 			// TODO Get save file name
-			save(dataSaver, "tmp.txt");
+			try {
+				save(dataSaver, "tmp.txt");
+			}
+			catch (IOException exception) {
+				exception.printStackTrace();
+			}
 		}
 	}
 
@@ -46,7 +52,7 @@ public class UtilityController implements Initializable {
 		// TODO implement print
 	}
 
-	public void save(DataSaver dataSaver, String fileName) {
+	public void save(DataSaver dataSaver, String fileName) throws IOException {
 		dataSaver.save(fileName);
 	}
 

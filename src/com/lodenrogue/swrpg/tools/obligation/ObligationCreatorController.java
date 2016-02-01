@@ -70,7 +70,7 @@ public class ObligationCreatorController implements Initializable {
 		boolean amountValid = validateAmount(amount);
 
 		if (playerNameValid && characterNameValid && amountValid) {
-			Player player = new Player();
+			PlayerObligation player = new PlayerObligation();
 			player.setPlayerName(playerName);
 			player.setCharacterName(characterName);
 			player.setObligation(new Obligation(obligationType, amount));

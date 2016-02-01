@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import com.lodenrogue.swrpg.charactergen.file.Saveable;
+import com.lodenrogue.swrpg.file.Saveable;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -81,7 +81,7 @@ public class DescriptionActivityController implements Initializable, Saveable {
 	}
 
 	@Override
-	public String getName() {
+	public String getId() {
 		return ID;
 	}
 

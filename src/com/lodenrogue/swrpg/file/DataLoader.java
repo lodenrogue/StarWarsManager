@@ -1,4 +1,4 @@
-package com.lodenrogue.swrpg.charactergen.file;
+package com.lodenrogue.swrpg.file;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class DataLoader {
 
 	public JSONObject load(String fileName) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader("data/" + fileName));
+		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		String line = "";
 		String source = "";
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import com.lodenrogue.swrpg.charactergen.file.Saveable;
+import com.lodenrogue.swrpg.file.Saveable;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -127,7 +127,7 @@ public class CareerActivityController implements Initializable, Saveable {
 	}
 
 	@Override
-	public String getName() {
+	public String getId() {
 		return ID;
 	}
 

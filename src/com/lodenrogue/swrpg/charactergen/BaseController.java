@@ -12,7 +12,7 @@ import com.lodenrogue.swrpg.charactergen.activities.CareerActivityController;
 import com.lodenrogue.swrpg.charactergen.activities.DescriptionActivityController;
 import com.lodenrogue.swrpg.charactergen.activities.ObligationsActivityController;
 import com.lodenrogue.swrpg.charactergen.activities.SpeciesActivityController;
-import com.lodenrogue.swrpg.charactergen.file.DataSaver;
+import com.lodenrogue.swrpg.file.DataSaver;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -103,7 +103,13 @@ public class BaseController implements Initializable {
 
 	private void saveData(String fileName) {
 		// TODO get character name or file save name from user
-		utility.save(dataSaver, fileName);
+		try {
+			utility.save(dataSaver, fileName);
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void loadActivity(ActivityState state) {
