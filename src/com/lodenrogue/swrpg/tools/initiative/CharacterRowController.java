@@ -31,6 +31,8 @@ public class CharacterRowController implements Initializable {
 		options.add("NPC");
 		entityTypeBox.setItems(options);
 		entityTypeBox.getSelectionModel().select(0);
+		successField.setText("" + 0);
+		advantageField.setText("" + 0);
 	}
 
 	public String getType() {
