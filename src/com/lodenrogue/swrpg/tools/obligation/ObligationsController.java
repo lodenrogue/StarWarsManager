@@ -20,6 +20,7 @@ import com.lodenrogue.swrpg.file.DataSaver;
 import com.lodenrogue.swrpg.file.Saveable;
 
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
@@ -29,8 +30,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -70,6 +74,27 @@ public class ObligationsController implements Initializable {
 	}
 
 	private void initializeTable() {
+		// Row factory
+		obligationTable.setRowFactory((tableView) -> {
+			final TableRow<PlayerObligation> row = new TableRow<>();
+			final ContextMenu rowMenu = new ContextMenu();
+
+			// Menu Item - Delete
+			MenuItem deleteItem = new MenuItem("Delete");
+			deleteItem.setOnAction((event) -> {
+				obligationTable.getItems().remove(row.getItem());
+			});
+
+			// Menu Item - Edit TODO
+			// ---------------------
+
+			rowMenu.getItems().addAll(deleteItem);
+
+			// only display context menu for non-null items:
+			row.contextMenuProperty().bind(Bindings.when(Bindings.isNotNull(row.itemProperty())).then(rowMenu).otherwise((ContextMenu) null));
+			return row;
+		});
+
 		playerColumn.setCellValueFactory((param) -> new SimpleStringProperty(param.getValue().getPlayerName()));
 		characterColumn.setCellValueFactory((param) -> new SimpleStringProperty(param.getValue().getCharacterName()));
 		typeColumn.setCellValueFactory((param) -> new SimpleStringProperty(WordUtils.capitalize(param.getValue().getObligation().getType().toString())));
