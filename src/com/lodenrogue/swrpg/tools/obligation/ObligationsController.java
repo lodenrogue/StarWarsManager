@@ -197,7 +197,7 @@ public class ObligationsController implements Initializable {
 		});
 
 		int roll = rand.nextInt(100);
-		if (roll <= obligationList.size()) {
+		if (roll < obligationList.size()) {
 			PlayerObligation chosenObligation = obligationList.get(roll);
 			//@formatter:off
 			chosenObligationLbl.setText("Chosen Obligation: " + chosenObligation.getPlayerName() +"/" 
